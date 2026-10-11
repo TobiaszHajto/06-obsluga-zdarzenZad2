@@ -1,6 +1,10 @@
 package com.example.a06_obsluga_zdarzenzad2;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +13,11 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
+
+
+    int licznik = 0;
+    TextView textwiew2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,5 +29,11 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
+
+        Button plus = findViewById(R.id.button);
+        Button minus = findViewById(R.id.button2);
+        textwiew2 = findViewById(R.id.textView2);
+
+
     }
 }
