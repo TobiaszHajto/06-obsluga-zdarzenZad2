@@ -34,6 +34,24 @@ public class MainActivity extends AppCompatActivity {
         Button minus = findViewById(R.id.button2);
         textwiew2 = findViewById(R.id.textView2);
 
+        View.OnClickListener listener = v ->{
+            if(v.getId() == R.id.button){
+                licznik++;
+            }else if (licznik > 0) {
+                licznik--;
+            }else{
+                Toast.makeText(this,R.string.error_negative, Toast.LENGTH_SHORT).show();
+                return;
+            }
+            textwiew2.setText(String.valueOf(licznik));
 
+        };
+        plus.setOnClickListener(listener);
+        minus.setOnClickListener(listener);
+    }
+
+    public void onResetClick(View view) {
+        licznik = 0;
+        textwiew2.setText(String.valueOf(licznik));
     }
 }
